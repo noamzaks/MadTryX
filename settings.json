@@ -1,0 +1,439 @@
+{
+  "field_schema": "https://tyx-editor.com/schemas/tyx-settings.schema.json",
+  "language": "he",
+  "keyboardShortcuts": [
+    [
+      "ctrl+space",
+      "toggleKeyboardMap Hebrew"
+    ],
+    [
+      "alt+f",
+      "math insert \\frac"
+    ],
+    [
+      "alt+.",
+      "math insert \\dot"
+    ],
+    [
+      "alt+p",
+      "math insert ^2"
+    ],
+    [
+      "ctrl+o r",
+      "math applyStyle {\"color\": \"red\"}"
+    ],
+    [
+      "ctrl+o g",
+      "math applyStyle {\"color\": \"green\"}"
+    ],
+    [
+      "ctrl+o o",
+      "math applyStyle {\"color\": \"orange\"}"
+    ],
+    [
+      "ctrl+o t",
+      "math applyStyle {\"color\": \"teal\"}"
+    ],
+    [
+      "ctrl+w a",
+      "math insert \\alpha"
+    ],
+    [
+      "ctrl+w c",
+      "math insert \\chi"
+    ],
+    [
+      "ctrl+w d",
+      "math insert \\delta"
+    ],
+    [
+      "ctrl+w shift+d",
+      "math insert \\Delta"
+    ],
+    [
+      "ctrl+w e",
+      "math insert \\varepsilon"
+    ],
+    [
+      "ctrl+w shift+e",
+      "math insert \\epsilon"
+    ],
+    [
+      "ctrl+w h",
+      "math insert \\eta"
+    ],
+    [
+      "ctrl+w g",
+      "math insert \\gamma"
+    ],
+    [
+      "ctrl+w shift+g",
+      "math insert \\Gamma"
+    ],
+    [
+      "ctrl+w i",
+      "math insert \\iota"
+    ],
+    [
+      "ctrl+w shift+i",
+      "math insert \\iota"
+    ],
+    [
+      "ctrl+w k",
+      "math insert \\kappa"
+    ],
+    [
+      "ctrl+w l",
+      "math insert \\lambda"
+    ],
+    [
+      "ctrl+w shift+l",
+      "math insert \\Lambda"
+    ],
+    [
+      "ctrl+w m",
+      "math insert \\mu"
+    ],
+    [
+      "ctrl+w n",
+      "math insert \\nu"
+    ],
+    [
+      "ctrl+w o",
+      "math insert \\omega"
+    ],
+    [
+      "ctrl+w w",
+      "math insert \\omega"
+    ],
+    [
+      "ctrl+w shift+o",
+      "math insert \\Omega"
+    ],
+    [
+      "ctrl+w shift+w",
+      "math insert \\Omega"
+    ],
+    [
+      "ctrl+w j",
+      "math insert \\varphi"
+    ],
+    [
+      "ctrl+w f",
+      "math insert \\phi"
+    ],
+    [
+      "ctrl+w shift+f",
+      "math insert \\Phi"
+    ],
+    [
+      "ctrl+w p",
+      "math insert \\pi"
+    ],
+    [
+      "ctrl+w shift+p",
+      "math insert \\Pi"
+    ],
+    [
+      "ctrl+w y",
+      "math insert \\psi"
+    ],
+    [
+      "ctrl+w shift+y",
+      "math insert \\Psi"
+    ],
+    [
+      "ctrl+w s",
+      "math insert \\sigma"
+    ],
+    [
+      "ctrl+w shift+s",
+      "math insert \\Sigma"
+    ],
+    [
+      "ctrl+w t",
+      "math insert \\tau"
+    ],
+    [
+      "ctrl+w q",
+      "math insert \\vartheta"
+    ],
+    [
+      "ctrl+w v",
+      "math insert \\theta"
+    ],
+    [
+      "ctrl+w shift+v",
+      "math insert \\Theta"
+    ],
+    [
+      "ctrl+w u",
+      "math insert \\upsilon"
+    ],
+    [
+      "ctrl+w shift+u",
+      "math insert \\Upsilon"
+    ],
+    [
+      "ctrl+w shift+r",
+      "math insert \\varrho"
+    ],
+    [
+      "ctrl+w x",
+      "math insert \\xi"
+    ],
+    [
+      "ctrl+w shift+x",
+      "math insert \\Xi"
+    ],
+    [
+      "ctrl+w z",
+      "math insert \\zeta"
+    ],
+    [
+      "ctrl+q c",
+      "math insert \\cos"
+    ],
+    [
+      "ctrl+q s",
+      "math insert \\sin"
+    ],
+    [
+      "ctrl+q t",
+      "math insert \\tan"
+    ],
+    [
+      "ctrl+q ctrl+h c",
+      "math insert \\cosh"
+    ],
+    [
+      "ctrl+q ctrl+h s",
+      "math insert \\sinh"
+    ],
+    [
+      "ctrl+q ctrl+h t",
+      "math insert \\tanh"
+    ],
+    [
+      "ctrl+q v",
+      "math insert \\circ"
+    ],
+    [
+      "ctrl+q o",
+      "math insert \\cot"
+    ],
+    [
+      "ctrl+q y",
+      "math insert \\det"
+    ],
+    [
+      "ctrl+q i",
+      "math insert \\inf"
+    ],
+    [
+      "ctrl+q u",
+      "math insert \\sup"
+    ],
+    [
+      "ctrl+q k",
+      "math insert \\ker"
+    ],
+    [
+      "ctrl+q n",
+      "math insert \\ln"
+    ],
+    [
+      "ctrl+q =",
+      "math insert \\equiv"
+    ],
+    [
+      "ctrl+q 8",
+      "math insert \\infty"
+    ],
+    [
+      "ctrl+q shift+n",
+      "math insert \\min"
+    ],
+    [
+      "ctrl+q shift+x",
+      "math insert \\max"
+    ],
+    [
+      "ctrl+q shift+s",
+      "math insert \\Im"
+    ],
+    [
+      "ctrl+q shift+a",
+      "math insert \\Re"
+    ],
+    [
+      "ctrl+e v",
+      "insertFunctionCall proof"
+    ],
+    [
+      "ctrl+e l",
+      "insertFunctionCall lemma"
+    ],
+    [
+      "ctrl+e shift+l",
+      "insertFunctionCall u-lemma"
+    ],
+    [
+      "ctrl+e c",
+      "insertFunctionCall claim"
+    ],
+    [
+      "ctrl+e shift+c",
+      "insertFunctionCall u-claim"
+    ],
+    [
+      "ctrl+e d",
+      "insertFunctionCall definition"
+    ],
+    [
+      "ctrl+e shift+d",
+      "insertFunctionCall u-definition"
+    ],
+    [
+      "ctrl+e x",
+      "insertFunctionCall corollary"
+    ],
+    [
+      "ctrl+e shift+x",
+      "insertFunctionCall u-corollary"
+    ],
+    [
+      "ctrl+e k",
+      "insertFunctionCall lemma"
+    ],
+    [
+      "ctrl+e shift+k",
+      "insertFunctionCall u-lemma"
+    ],
+    [
+      "ctrl+e t",
+      "insertFunctionCall theorem"
+    ],
+    [
+      "ctrl+e shift+t",
+      "insertFunctionCall u-theorem"
+    ],
+    [
+      "ctrl+e ,",
+      "insertFunctionCall exercise"
+    ],
+    [
+      "ctrl+e shift+,",
+      "insertFunctionCall u-exercise"
+    ],
+    [
+      "ctrl+e p",
+      "insertFunctionCall solution"
+    ],
+    [
+      "ctrl+e shift+p",
+      "insertFunctionCall u-solution"
+    ],
+    [
+      "ctrl+e e",
+      "insertFunctionCall example"
+    ],
+    [
+      "ctrl+e shift+e",
+      "insertFunctionCall u-example"
+    ],
+    [
+      "ctrl+e g",
+      "insertFunctionCall remark"
+    ],
+    [
+      "ctrl+e shift+g",
+      "insertFunctionCall u-remark"
+    ],
+    [
+      "ctrl+i i",
+      "math insert \\in"
+    ],
+    [
+      "ctrl+i j",
+      "math insert \\cap"
+    ],
+    [
+      "ctrl+i u",
+      "math insert \\cup"
+    ],
+    [
+      "ctrl+i m",
+      "math insert \\setminus"
+    ],
+    [
+      "ctrl+i v",
+      "math insert \\circ"
+    ],
+    [
+      "ctrl+i c",
+      "math insert \\mathbb{C}"
+    ],
+    [
+      "ctrl+i f",
+      "math insert \\mathbb{F}"
+    ],
+    [
+      "ctrl+i r",
+      "math insert \\mathbb{R}"
+    ],
+    [
+      "ctrl+i z",
+      "math insert \\mathbb{Z}"
+    ],
+    [
+      "ctrl+i n",
+      "math insert \\mathbb{N}"
+    ],
+    [
+      "ctrl+i q",
+      "math insert \\mathbb{Q}"
+    ],
+    [
+      "ctrl+i shift+i",
+      "math insert \\notin"
+    ],
+    [
+      "ctrl+i e",
+      "math insert \\emptyset"
+    ],
+    [
+      "ctrl+i t",
+      "math insert \\aleph"
+    ],
+    [
+      "ctrl+i o",
+      "math insert \\lor"
+    ],
+    [
+      "ctrl+i b",
+      "math insert \\subseteq"
+    ],
+    [
+      "ctrl+i shift+b",
+      "math insert \\subset"
+    ],
+    [
+      "ctrl+i p",
+      "math insert \\supseteq"
+    ],
+    [
+      "ctrl+i shift+p",
+      "math insert \\supset"
+    ],
+    [
+      "ctrl+i shift+a",
+      "math insert \\bigwedge"
+    ],
+    [
+      "ctrl+i shift+o",
+      "math insert \\bigvee"
+    ]
+  ],
+  "keyboardMap": "Hebrew"
+}

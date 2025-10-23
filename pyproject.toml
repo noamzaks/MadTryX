@@ -1,0 +1,9 @@
+[project]
+name = "madtryx"
+version = "0.1.0"
+description = "Creates the templates and settings for MadTryX"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "tyx-schema>=0.2.11",
+]

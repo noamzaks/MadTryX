@@ -1,0 +1,604 @@
+{
+  "field_schema": "https://tyx-editor.com/schemas/tyx-document.schema.json",
+  "version": "0.2.11",
+  "preamble": "#import \"@preview/ctheorems:1.1.3\": *\n\n#let theorem = thmbox(\"1\", \"משפט\", base_level: 0, inset: 0pt)\n#let u-theorem = theorem.with(numbering: none)\n#let corollary = thmbox(\"2\", \"מסקנה\", base: \"1\", inset: 0pt)\n#let u-corollary = corollary.with(numbering: none)\n#let lemma = thmbox(\"1\", \"למה\", base_level: 0, inset: 0pt)\n#let u-lemma = lemma.with(numbering: none)\n#let proposition = thmbox(\"1\", \"הצעה\", base_level: 0, inset: 0pt)\n#let u-proposition = proposition.with(numbering: none)\n#let conjecture = thmbox(\"1\", \"השערה\", base_level: 0, inset: 0pt)\n#let u-conjecture = conjecture.with(numbering: none)\n#let definition = thmbox(\"1\", \"הגדרה\", base_level: 0, inset: 0pt)\n#let u-definition = definition.with(numbering: none)\n#let example = thmbox(\"1\", \"דוגמה\", base_level: 0, inset: 0pt)\n#let u-example = example.with(numbering: none)\n#let problem = thmbox(\"1\", \"בעייה\", base_level: 0, inset: 0pt)\n#let u-problem = problem.with(numbering: none)\n#let exercise = thmbox(\"1\", \"תרגיל\", base_level: 0, inset: 0pt)\n#let u-exercise = exercise.with(numbering: none)\n#let solution = thmbox(\"1\", \"פתרון\", base_level: 0, inset: 0pt)\n#let u-solution = solution.with(numbering: none)\n#let remark = thmbox(\"1\", \"הערה\", base_level: 0, inset: 0pt)\n#let u-remark = remark.with(numbering: none)\n#let claim = thmbox(\"1\", \"טענה\", base_level: 0, inset: 0pt)\n#let u-claim = claim.with(numbering: none)\n#let fact = thmbox(\"1\", \"עובדה\", base_level: 0, inset: 0pt)\n#let u-fact = fact.with(numbering: none)\n#let case = thmbox(\"1\", \"מקרה\", base_level: 0, inset: 0pt)\n#let proof = thmproof(\"proof\", \"הוכחה\", base_level: 0, inset: 0pt)\n\n#set text(font: \"David CLM\")\n\n#show: thmrules\n#let title(title, author, date) = {\n  box(width: 100%, stroke: 1pt, inset: 3pt, box(width: 100%, stroke: 0.5pt, inset: 5pt, align(center)[\n    #v(0.5em)\n    #text(weight: \"bold\", size: 24pt, title)\n\n    #v(-0.5em)\n    #author\n\n    #date\n\n    #v(0.5em)\n  ]))\n}",
+  "content": {
+    "root": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "functioncall",
+              "name": "title",
+              "positionParameters": [
+                {
+                  "type": "content",
+                  "value": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "text",
+                            "text": "(12345) שם קורס | תרגיל",
+                            "format": 0.0
+                          }
+                        ],
+                        "format": "",
+                        "direction": "rtl"
+                      }
+                    ],
+                    "direction": "rtl"
+                  }
+                },
+                {
+                  "type": "content",
+                  "value": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "text",
+                            "text": "שם: גלעד טל | ת״ז: 123456789",
+                            "format": 0.0
+                          }
+                        ],
+                        "format": "",
+                        "direction": "rtl"
+                      }
+                    ],
+                    "direction": "rtl"
+                  }
+                },
+                {
+                  "type": "content",
+                  "value": {
+                    "type": "root",
+                    "children": [
+                      {
+                        "type": "paragraph",
+                        "children": [
+                          {
+                            "type": "text",
+                            "text": "היום",
+                            "format": 0.0
+                          }
+                        ],
+                        "format": "",
+                        "direction": "rtl"
+                      }
+                    ],
+                    "direction": "rtl"
+                  }
+                }
+              ],
+              "namedParameters": {}
+            }
+          ],
+          "format": ""
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 1",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 2",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 3",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 4",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 5",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h1",
+          "children": [
+            {
+              "type": "text",
+              "text": "שאלה 6",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(א)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ב)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "tag": "h2",
+          "children": [
+            {
+              "type": "text",
+              "text": "(ג)",
+              "format": 0.0
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [],
+          "format": "",
+          "direction": "rtl"
+        }
+      ],
+      "direction": "rtl"
+    }
+  },
+  "settings": {
+    "language": "he",
+    "functions": {
+      "title": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "title"
+          },
+          {
+            "type": "content",
+            "label": "author"
+          },
+          {
+            "type": "content",
+            "label": "date"
+          }
+        ]
+      },
+      "theorem": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-theorem": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "corollary": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-corollary": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "lemma": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-lemma": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "proposition": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-proposition": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "conjecture": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-conjecture": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "definition": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-definition": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "example": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-example": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "problem": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-problem": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "exercise": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-exercise": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "solution": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-solution": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "remark": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-remark": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "claim": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-claim": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "fact": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "u-fact": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "case": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      },
+      "proof": {
+        "positional": [
+          {
+            "type": "content",
+            "label": "body"
+          }
+        ]
+      }
+    }
+  }
+}
