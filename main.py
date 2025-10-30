@@ -1,9 +1,10 @@
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 from tyx_schema import (
+    Content,
     FunctionDefinition,
     ParameterDescription,
     TyXDocument,
@@ -17,6 +18,7 @@ class TemplateInfo:
     preamble: str
     functions: List[Tuple[str, FunctionDefinition]]
     filename: str
+    content: Optional[Content] = None
 
 
 DOCUMENT_BASE = TyXDocument(
@@ -731,6 +733,32 @@ PREAMBLE_FANCY = """
 TEMPLATES = [
     TemplateInfo("", [], "hebrew-basic.tyx"),
     TemplateInfo(PREAMBLE_FANCY, [], "hebrew-fancy.tyx"),
+    TemplateInfo(
+        "",
+        [],
+        "hebrew-empty.tyx",
+        Content(
+            root={
+                "children": [
+                    {
+                        "children": [],
+                        "direction": "rtl",
+                        "format": "",
+                        "indent": 0,
+                        "type": "paragraph",
+                        "version": 1,
+                        "textFormat": 0,
+                        "textStyle": "",
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "root",
+                "version": 1,
+            }
+        ),
+    ),
 ]
 
 
@@ -743,6 +771,8 @@ def write_templates():
         result.settings.functions = {
             name: f for (name, f) in FUNCTIONS_BASE + template.functions
         }
+        if template.content is not None:
+            result.content = template.content
 
         (templates_directory / (template.filename)).write_text(
             result.model_dump_json(indent=2, exclude_none=True)
