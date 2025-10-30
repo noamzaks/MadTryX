@@ -80,7 +80,8 @@
               "namedParameters": {}
             }
           ],
-          "format": ""
+          "format": "",
+          "direction": "rtl"
         },
         {
           "type": "heading",

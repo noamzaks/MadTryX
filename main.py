@@ -134,7 +134,7 @@ DOCUMENT_BASE = TyXDocument(
                             "namedParameters": {},
                         }
                     ],
-                    "direction": None,
+                    "direction": "rtl",
                     "format": "",
                     "indent": 0,
                     "type": "paragraph",
@@ -714,6 +714,22 @@ FUNCTIONS_BASE = [
     ],
 ]
 
+PREAMBLE_BASIC = """
+#let title(title, author, date) = {
+  box(width: 100%, align(center)[
+    #v(0.5em)
+    #text(weight: "bold", size: 24pt, title)
+
+    #v(-0.5em)
+    #author
+
+    #date
+
+    #v(0.5em)
+  ])
+}
+""".strip()
+
 PREAMBLE_FANCY = """
 #let title(title, author, date) = {
   box(width: 100%, stroke: 1pt, inset: 3pt, box(width: 100%, stroke: 0.5pt, inset: 5pt, align(center)[
@@ -731,7 +747,7 @@ PREAMBLE_FANCY = """
 """.strip()
 
 TEMPLATES = [
-    TemplateInfo("", [], "hebrew-basic.tyx"),
+    TemplateInfo(PREAMBLE_BASIC, [], "hebrew-basic.tyx"),
     TemplateInfo(PREAMBLE_FANCY, [], "hebrew-fancy.tyx"),
     TemplateInfo(
         "",
