@@ -15,423 +15,419 @@
       "math insert \\dot"
     ],
     [
-      "alt+p",
-      "math insert ^2"
-    ],
-    [
-      "ctrl+o r",
+      "alt+o r",
       "math applyStyle {\"color\": \"red\"}"
     ],
     [
-      "ctrl+o g",
+      "alt+o g",
       "math applyStyle {\"color\": \"green\"}"
     ],
     [
-      "ctrl+o o",
+      "alt+o o",
       "math applyStyle {\"color\": \"orange\"}"
     ],
     [
-      "ctrl+o t",
+      "alt+o t",
       "math applyStyle {\"color\": \"teal\"}"
     ],
     [
-      "ctrl+w a",
+      "alt+w a",
       "math insert \\alpha"
     ],
     [
-      "ctrl+w c",
+      "alt+w c",
       "math insert \\chi"
     ],
     [
-      "ctrl+w d",
+      "alt+w d",
       "math insert \\delta"
     ],
     [
-      "ctrl+w shift+d",
+      "alt+w shift+d",
       "math insert \\Delta"
     ],
     [
-      "ctrl+w e",
+      "alt+w e",
       "math insert \\varepsilon"
     ],
     [
-      "ctrl+w shift+e",
+      "alt+w shift+e",
       "math insert \\epsilon"
     ],
     [
-      "ctrl+w h",
+      "alt+w h",
       "math insert \\eta"
     ],
     [
-      "ctrl+w g",
+      "alt+w g",
       "math insert \\gamma"
     ],
     [
-      "ctrl+w shift+g",
+      "alt+w shift+g",
       "math insert \\Gamma"
     ],
     [
-      "ctrl+w i",
+      "alt+w i",
       "math insert \\iota"
     ],
     [
-      "ctrl+w shift+i",
+      "alt+w shift+i",
       "math insert \\iota"
     ],
     [
-      "ctrl+w k",
+      "alt+w k",
       "math insert \\kappa"
     ],
     [
-      "ctrl+w l",
+      "alt+w l",
       "math insert \\lambda"
     ],
     [
-      "ctrl+w shift+l",
+      "alt+w shift+l",
       "math insert \\Lambda"
     ],
     [
-      "ctrl+w m",
+      "alt+w m",
       "math insert \\mu"
     ],
     [
-      "ctrl+w n",
+      "alt+w n",
       "math insert \\nu"
     ],
     [
-      "ctrl+w o",
+      "alt+w o",
       "math insert \\omega"
     ],
     [
-      "ctrl+w w",
+      "alt+w w",
       "math insert \\omega"
     ],
     [
-      "ctrl+w shift+o",
+      "alt+w shift+o",
       "math insert \\Omega"
     ],
     [
-      "ctrl+w shift+w",
+      "alt+w shift+w",
       "math insert \\Omega"
     ],
     [
-      "ctrl+w j",
+      "alt+w j",
       "math insert \\varphi"
     ],
     [
-      "ctrl+w f",
+      "alt+w f",
       "math insert \\phi"
     ],
     [
-      "ctrl+w shift+f",
+      "alt+w shift+f",
       "math insert \\Phi"
     ],
     [
-      "ctrl+w p",
+      "alt+w p",
       "math insert \\pi"
     ],
     [
-      "ctrl+w shift+p",
+      "alt+w shift+p",
       "math insert \\Pi"
     ],
     [
-      "ctrl+w y",
+      "alt+w y",
       "math insert \\psi"
     ],
     [
-      "ctrl+w shift+y",
+      "alt+w shift+y",
       "math insert \\Psi"
     ],
     [
-      "ctrl+w s",
+      "alt+w s",
       "math insert \\sigma"
     ],
     [
-      "ctrl+w shift+s",
+      "alt+w shift+s",
       "math insert \\Sigma"
     ],
     [
-      "ctrl+w t",
+      "alt+w t",
       "math insert \\tau"
     ],
     [
-      "ctrl+w q",
+      "alt+w q",
       "math insert \\vartheta"
     ],
     [
-      "ctrl+w v",
+      "alt+w v",
       "math insert \\theta"
     ],
     [
-      "ctrl+w shift+v",
+      "alt+w shift+v",
       "math insert \\Theta"
     ],
     [
-      "ctrl+w u",
+      "alt+w u",
       "math insert \\upsilon"
     ],
     [
-      "ctrl+w shift+u",
+      "alt+w shift+u",
       "math insert \\Upsilon"
     ],
     [
-      "ctrl+w shift+r",
+      "alt+w shift+r",
       "math insert \\varrho"
     ],
     [
-      "ctrl+w x",
+      "alt+w x",
       "math insert \\xi"
     ],
     [
-      "ctrl+w shift+x",
+      "alt+w shift+x",
       "math insert \\Xi"
     ],
     [
-      "ctrl+w z",
+      "alt+w z",
       "math insert \\zeta"
     ],
     [
-      "ctrl+q c",
+      "alt+q c",
       "math insert \\cos"
     ],
     [
-      "ctrl+q s",
+      "alt+q s",
       "math insert \\sin"
     ],
     [
-      "ctrl+q t",
+      "alt+q t",
       "math insert \\tan"
     ],
     [
-      "ctrl+q ctrl+h c",
+      "alt+q alt+h c",
       "math insert \\cosh"
     ],
     [
-      "ctrl+q ctrl+h s",
+      "alt+q alt+h s",
       "math insert \\sinh"
     ],
     [
-      "ctrl+q ctrl+h t",
+      "alt+q alt+h t",
       "math insert \\tanh"
     ],
     [
-      "ctrl+q v",
+      "alt+q v",
       "math insert \\circ"
     ],
     [
-      "ctrl+q o",
+      "alt+q o",
       "math insert \\cot"
     ],
     [
-      "ctrl+q y",
+      "alt+q y",
       "math insert \\det"
     ],
     [
-      "ctrl+q i",
+      "alt+q i",
       "math insert \\inf"
     ],
     [
-      "ctrl+q u",
+      "alt+q u",
       "math insert \\sup"
     ],
     [
-      "ctrl+q k",
+      "alt+q k",
       "math insert \\ker"
     ],
     [
-      "ctrl+q n",
+      "alt+q n",
       "math insert \\ln"
     ],
     [
-      "ctrl+q =",
+      "alt+q =",
       "math insert \\equiv"
     ],
     [
-      "ctrl+q 8",
+      "alt+q 8",
       "math insert \\infty"
     ],
     [
-      "ctrl+q shift+n",
+      "alt+q shift+n",
       "math insert \\min"
     ],
     [
-      "ctrl+q shift+x",
+      "alt+q shift+x",
       "math insert \\max"
     ],
     [
-      "ctrl+q shift+s",
+      "alt+q shift+s",
       "math insert \\Im"
     ],
     [
-      "ctrl+q shift+a",
+      "alt+q shift+a",
       "math insert \\Re"
     ],
     [
-      "ctrl+e v",
+      "alt+e v",
       "insertFunctionCall proof"
     ],
     [
-      "ctrl+e l",
+      "alt+e l",
       "insertFunctionCall lemma"
     ],
     [
-      "ctrl+e shift+l",
+      "alt+e shift+l",
       "insertFunctionCall u-lemma"
     ],
     [
-      "ctrl+e c",
+      "alt+e c",
       "insertFunctionCall claim"
     ],
     [
-      "ctrl+e shift+c",
+      "alt+e shift+c",
       "insertFunctionCall u-claim"
     ],
     [
-      "ctrl+e d",
+      "alt+e d",
       "insertFunctionCall definition"
     ],
     [
-      "ctrl+e shift+d",
+      "alt+e shift+d",
       "insertFunctionCall u-definition"
     ],
     [
-      "ctrl+e x",
+      "alt+e x",
       "insertFunctionCall corollary"
     ],
     [
-      "ctrl+e shift+x",
+      "alt+e shift+x",
       "insertFunctionCall u-corollary"
     ],
     [
-      "ctrl+e k",
+      "alt+e k",
       "insertFunctionCall lemma"
     ],
     [
-      "ctrl+e shift+k",
+      "alt+e shift+k",
       "insertFunctionCall u-lemma"
     ],
     [
-      "ctrl+e t",
+      "alt+e t",
       "insertFunctionCall theorem"
     ],
     [
-      "ctrl+e shift+t",
+      "alt+e shift+t",
       "insertFunctionCall u-theorem"
     ],
     [
-      "ctrl+e ,",
+      "alt+e ,",
       "insertFunctionCall exercise"
     ],
     [
-      "ctrl+e shift+,",
+      "alt+e shift+,",
       "insertFunctionCall u-exercise"
     ],
     [
-      "ctrl+e p",
+      "alt+e p",
       "insertFunctionCall solution"
     ],
     [
-      "ctrl+e shift+p",
+      "alt+e shift+p",
       "insertFunctionCall u-solution"
     ],
     [
-      "ctrl+e e",
+      "alt+e e",
       "insertFunctionCall example"
     ],
     [
-      "ctrl+e shift+e",
+      "alt+e shift+e",
       "insertFunctionCall u-example"
     ],
     [
-      "ctrl+e g",
+      "alt+e g",
       "insertFunctionCall remark"
     ],
     [
-      "ctrl+e shift+g",
+      "alt+e shift+g",
       "insertFunctionCall u-remark"
     ],
     [
-      "ctrl+i i",
+      "alt+i i",
       "math insert \\in"
     ],
     [
-      "ctrl+i j",
+      "alt+i j",
       "math insert \\cap"
     ],
     [
-      "ctrl+i u",
+      "alt+i u",
       "math insert \\cup"
     ],
     [
-      "ctrl+i m",
+      "alt+i m",
       "math insert \\setminus"
     ],
     [
-      "ctrl+i v",
+      "alt+i v",
       "math insert \\circ"
     ],
     [
-      "ctrl+i c",
+      "alt+i c",
       "math insert \\mathbb{C}"
     ],
     [
-      "ctrl+i f",
+      "alt+i f",
       "math insert \\mathbb{F}"
     ],
     [
-      "ctrl+i r",
+      "alt+i r",
       "math insert \\mathbb{R}"
     ],
     [
-      "ctrl+i z",
+      "alt+i z",
       "math insert \\mathbb{Z}"
     ],
     [
-      "ctrl+i n",
+      "alt+i n",
       "math insert \\mathbb{N}"
     ],
     [
-      "ctrl+i q",
+      "alt+i q",
       "math insert \\mathbb{Q}"
     ],
     [
-      "ctrl+i shift+i",
+      "alt+i shift+i",
       "math insert \\notin"
     ],
     [
-      "ctrl+i e",
+      "alt+i e",
       "math insert \\emptyset"
     ],
     [
-      "ctrl+i t",
+      "alt+i t",
       "math insert \\aleph"
     ],
     [
-      "ctrl+i o",
+      "alt+i o",
       "math insert \\lor"
     ],
     [
-      "ctrl+i b",
+      "alt+i b",
       "math insert \\subseteq"
     ],
     [
-      "ctrl+i shift+b",
+      "alt+i shift+b",
       "math insert \\subset"
     ],
     [
-      "ctrl+i p",
+      "alt+i p",
       "math insert \\supseteq"
     ],
     [
-      "ctrl+i shift+p",
+      "alt+i shift+p",
       "math insert \\supset"
     ],
     [
-      "ctrl+i shift+a",
+      "alt+i shift+a",
       "math insert \\bigwedge"
     ],
     [
-      "ctrl+i shift+o",
+      "alt+i shift+o",
       "math insert \\bigvee"
     ]
   ],

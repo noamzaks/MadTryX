@@ -811,7 +811,7 @@ def write_settings():
         ("t", "teal"),
     ]:
         shortcuts.append(
-            [f"ctrl+o {shortcut}", f'math applyStyle {{"color": "{color}"}}']
+            [f"alt+o {shortcut}", f'math applyStyle {{"color": "{color}"}}']
         )
 
     # Greek
@@ -856,16 +856,16 @@ def write_settings():
         ("shift+x", "Xi"),
         ("z", "zeta"),
     ]:
-        shortcuts.append([f"ctrl+w {shortcut}", f"math insert \\{letter}"])
+        shortcuts.append([f"alt+w {shortcut}", f"math insert \\{letter}"])
 
     # Functions
     for shortcut, function in [
         ("c", "cos"),
         ("s", "sin"),
         ("t", "tan"),
-        ("ctrl+h c", "cosh"),
-        ("ctrl+h s", "sinh"),
-        ("ctrl+h t", "tanh"),
+        ("alt+h c", "cosh"),
+        ("alt+h s", "sinh"),
+        ("alt+h t", "tanh"),
         ("v", "circ"),
         ("o", "cot"),
         ("y", "det"),
@@ -880,7 +880,7 @@ def write_settings():
         ("shift+s", "Im"),
         ("shift+a", "Re"),
     ]:
-        shortcuts.append([f"ctrl+q {shortcut}", f"math insert \\{function}"])
+        shortcuts.append([f"alt+q {shortcut}", f"math insert \\{function}"])
 
     # Environments
     for shortcut, environment in [
@@ -896,11 +896,11 @@ def write_settings():
         ("e", "example"),
         ("g", "remark"),
     ]:
-        shortcuts.append([f"ctrl+e {shortcut}", f"insertFunctionCall {environment}"])
+        shortcuts.append([f"alt+e {shortcut}", f"insertFunctionCall {environment}"])
 
         if environment != "proof":
             shortcuts.append(
-                [f"ctrl+e shift+{shortcut}", f"insertFunctionCall u-{environment}"]
+                [f"alt+e shift+{shortcut}", f"insertFunctionCall u-{environment}"]
             )
 
     # Set Theory
@@ -930,7 +930,7 @@ def write_settings():
         ("shift+a", "bigwedge"),
         ("shift+o", "bigvee"),
     ]:
-        shortcuts.append([f"ctrl+i {shortcut}", f"math insert \\{command}"])
+        shortcuts.append([f"alt+i {shortcut}", f"math insert \\{command}"])
 
     settings = TyXSettings(
         language="he",
