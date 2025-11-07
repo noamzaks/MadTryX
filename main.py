@@ -15,616 +15,1001 @@ from tyx_schema import (
 
 @dataclass
 class TemplateInfo:
+    filename: str
     preamble: str
     functions: List[Tuple[str, FunctionDefinition]]
-    filename: str
     content: Optional[Content] = None
+    settings: Optional[TyXDocumentSettings] = None
 
 
-DOCUMENT_BASE = TyXDocument(
-    version="0.2.11",
-    content={
-        "root": {
-            "children": [
-                {
-                    "children": [
-                        {
-                            "type": "functioncall",
-                            "version": 1,
-                            "name": "title",
-                            "inline": False,
-                            "positionParameters": [
-                                {
-                                    "type": "content",
-                                    "value": {
-                                        "children": [
-                                            {
-                                                "children": [
-                                                    {
-                                                        "detail": 0,
-                                                        "format": 0,
-                                                        "mode": "normal",
-                                                        "style": "",
-                                                        "text": "(12345) שם קורס | תרגיל",
-                                                        "type": "text",
-                                                        "version": 1,
-                                                    }
-                                                ],
-                                                "direction": "rtl",
-                                                "format": "",
-                                                "indent": 0,
-                                                "type": "paragraph",
-                                                "version": 1,
-                                                "textFormat": 0,
-                                                "textStyle": "",
-                                            }
-                                        ],
-                                        "direction": "rtl",
-                                        "format": "",
-                                        "indent": 0,
-                                        "type": "root",
-                                        "version": 1,
-                                    },
+CONTENT_HEBREW = Content(
+    root={
+        "children": [
+            {
+                "children": [
+                    {
+                        "type": "functioncall",
+                        "version": 1,
+                        "name": "title",
+                        "inline": False,
+                        "positionParameters": [
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "detail": 0,
+                                                    "format": 0,
+                                                    "mode": "normal",
+                                                    "style": "",
+                                                    "text": "(12345) שם קורס | תרגיל",
+                                                    "type": "text",
+                                                    "version": 1,
+                                                }
+                                            ],
+                                            "direction": "rtl",
+                                            "format": "",
+                                            "indent": 0,
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                            "textStyle": "",
+                                        }
+                                    ],
+                                    "direction": "rtl",
+                                    "format": "",
+                                    "indent": 0,
+                                    "type": "root",
+                                    "version": 1,
                                 },
-                                {
-                                    "type": "content",
-                                    "value": {
-                                        "children": [
-                                            {
-                                                "children": [
-                                                    {
-                                                        "detail": 0,
-                                                        "format": 0,
-                                                        "mode": "normal",
-                                                        "style": "",
-                                                        "text": "שם: גלעד טל | ת״ז: 123456789",
-                                                        "type": "text",
-                                                        "version": 1,
-                                                    }
-                                                ],
-                                                "direction": "rtl",
-                                                "format": "",
-                                                "indent": 0,
-                                                "type": "paragraph",
-                                                "version": 1,
-                                                "textFormat": 0,
-                                                "textStyle": "",
-                                            }
-                                        ],
-                                        "direction": "rtl",
-                                        "format": "",
-                                        "indent": 0,
-                                        "type": "root",
-                                        "version": 1,
-                                    },
+                            },
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "detail": 0,
+                                                    "format": 0,
+                                                    "mode": "normal",
+                                                    "style": "",
+                                                    "text": "שם: ישראל ישראלי | ת״ז: 123456789",
+                                                    "type": "text",
+                                                    "version": 1,
+                                                }
+                                            ],
+                                            "direction": "rtl",
+                                            "format": "",
+                                            "indent": 0,
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                            "textStyle": "",
+                                        }
+                                    ],
+                                    "direction": "rtl",
+                                    "format": "",
+                                    "indent": 0,
+                                    "type": "root",
+                                    "version": 1,
                                 },
-                                {
-                                    "type": "content",
-                                    "value": {
-                                        "children": [
-                                            {
-                                                "children": [
-                                                    {
-                                                        "detail": 0,
-                                                        "format": 0,
-                                                        "mode": "normal",
-                                                        "style": "",
-                                                        "text": "היום",
-                                                        "type": "text",
-                                                        "version": 1,
-                                                    }
-                                                ],
-                                                "direction": "rtl",
-                                                "format": "",
-                                                "indent": 0,
-                                                "type": "paragraph",
-                                                "version": 1,
-                                                "textFormat": 0,
-                                                "textStyle": "",
-                                            }
-                                        ],
-                                        "direction": "rtl",
-                                        "format": "",
-                                        "indent": 0,
-                                        "type": "root",
-                                        "version": 1,
-                                    },
+                            },
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "typstcode",
+                                                    "version": 1,
+                                                    "text": {
+                                                        "editorState": {
+                                                            "root": {
+                                                                "children": [
+                                                                    {
+                                                                        "children": [
+                                                                            {
+                                                                                "detail": 0,
+                                                                                "format": 0,
+                                                                                "mode": "normal",
+                                                                                "style": "",
+                                                                                "text": "#datetime.today().display()",
+                                                                                "type": "text",
+                                                                                "version": 1,
+                                                                            }
+                                                                        ],
+                                                                        "format": "",
+                                                                        "indent": 0,
+                                                                        "type": "paragraph",
+                                                                        "version": 1,
+                                                                        "textFormat": 0,
+                                                                        "textStyle": "",
+                                                                    }
+                                                                ],
+                                                                "format": "",
+                                                                "indent": 0,
+                                                                "type": "root",
+                                                                "version": 1,
+                                                            }
+                                                        }
+                                                    },
+                                                }
+                                            ],
+                                            "format": "",
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                            "textStyle": "",
+                                        }
+                                    ],
+                                    "format": "",
+                                    "type": "root",
+                                    "version": 1,
                                 },
-                            ],
-                            "namedParameters": {},
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "paragraph",
-                    "version": 1,
-                    "textFormat": 0,
-                    "textStyle": "",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 1",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 2",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 3",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 4",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 5",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "שאלה 6",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h1",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(א)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ב)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [
-                        {
-                            "detail": 0,
-                            "format": 0,
-                            "mode": "normal",
-                            "style": "",
-                            "text": "(ג)",
-                            "type": "text",
-                            "version": 1,
-                        }
-                    ],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "heading",
-                    "version": 1,
-                    "tag": "h2",
-                },
-                {
-                    "children": [],
-                    "direction": "rtl",
-                    "format": "",
-                    "indent": 0,
-                    "type": "paragraph",
-                    "version": 1,
-                    "textFormat": 0,
-                    "textStyle": "",
-                },
-            ],
-            "direction": "rtl",
-            "format": "",
-            "indent": 0,
-            "type": "root",
-            "version": 1,
-        }
-    },
-    settings=TyXDocumentSettings(
-        language="he",
-    ),
-    **{
-        "$schema": "https://tyx-editor.com/schemas/tyx-document.schema.json",
-    },
+                            },
+                        ],
+                        "namedParameters": {},
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": "",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 1",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 2",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 3",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 4",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 5",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "שאלה 6",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(א)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ב)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": "",
+                        "text": "(ג)",
+                        "type": "text",
+                        "version": 1,
+                    }
+                ],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": "",
+            },
+        ],
+        "direction": "rtl",
+        "format": "",
+        "indent": 0,
+        "type": "root",
+        "version": 1,
+    }
 )
 
-PREAMBLE_BASE = """
+CONTENT_ENGLISH = Content(
+    root={
+        "children": [
+            {
+                "children": [
+                    {
+                        "type": "functioncall",
+                        "version": 1,
+                        "name": "title",
+                        "inline": False,
+                        "positionParameters": [
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "format": 0,
+                                                    "text": "(12345) Course Name | Exercise",
+                                                    "type": "text",
+                                                    "version": 1,
+                                                }
+                                            ],
+                                            "format": "",
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                        }
+                                    ],
+                                    "format": "",
+                                    "type": "root",
+                                    "version": 1,
+                                },
+                            },
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "format": 0,
+                                                    "text": "Name: John Doe",
+                                                    "type": "text",
+                                                    "version": 1,
+                                                }
+                                            ],
+                                            "format": "",
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                        }
+                                    ],
+                                    "format": "",
+                                    "type": "root",
+                                    "version": 1,
+                                },
+                            },
+                            {
+                                "type": "content",
+                                "value": {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "type": "typstcode",
+                                                    "version": 1,
+                                                    "text": {
+                                                        "editorState": {
+                                                            "root": {
+                                                                "children": [
+                                                                    {
+                                                                        "children": [
+                                                                            {
+                                                                                "detail": 0,
+                                                                                "format": 0,
+                                                                                "mode": "normal",
+                                                                                "style": "",
+                                                                                "text": "#datetime.today().display()",
+                                                                                "type": "text",
+                                                                                "version": 1,
+                                                                            }
+                                                                        ],
+                                                                        "format": "",
+                                                                        "indent": 0,
+                                                                        "type": "paragraph",
+                                                                        "version": 1,
+                                                                        "textFormat": 0,
+                                                                        "textStyle": "",
+                                                                    }
+                                                                ],
+                                                                "format": "",
+                                                                "indent": 0,
+                                                                "type": "root",
+                                                                "version": 1,
+                                                            }
+                                                        }
+                                                    },
+                                                }
+                                            ],
+                                            "format": "",
+                                            "type": "paragraph",
+                                            "version": 1,
+                                            "textFormat": 0,
+                                            "textStyle": "",
+                                        }
+                                    ],
+                                    "format": "",
+                                    "type": "root",
+                                    "version": 1,
+                                },
+                            },
+                        ],
+                        "namedParameters": {},
+                    }
+                ],
+                "format": "",
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": "",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 1", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 2", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 3", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 4", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 5", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "Question 6", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h1",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(a)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(b)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+            {
+                "children": [
+                    {"format": 0, "text": "(c)", "type": "text", "version": 1}
+                ],
+                "format": "",
+                "type": "heading",
+                "version": 1,
+                "tag": "h2",
+            },
+        ],
+        "format": "",
+        "type": "root",
+        "version": 1,
+    }
+)
+
+CONTENT_EMPTY = Content(
+    root={
+        "children": [
+            {
+                "children": [],
+                "direction": "rtl",
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "version": 1,
+                "textFormat": 0,
+                "textStyle": "",
+            }
+        ],
+        "direction": "rtl",
+        "format": "",
+        "indent": 0,
+        "type": "root",
+        "version": 1,
+    }
+)
+
+SETTINGS_HEBREW = TyXDocumentSettings(language="he")
+
+PREAMBLE_HEBREW_BASE = (
+    """
 #import "@preview/ctheorems:1.1.3": *
 
 #let theorem = thmbox("1", "משפט", base_level: 0, inset: 0pt)
@@ -660,6 +1045,45 @@ PREAMBLE_BASE = """
 
 #show: thmrules
 """.strip()
+    + "\n"
+)
+PREAMBLE_ENGLISH_BASE = (
+    """
+#import "@preview/ctheorems:1.1.3": *
+
+#let theorem = thmbox("1", "Theorem", base_level: 0, inset: 0pt)
+#let u-theorem = theorem.with(numbering: none)
+#let corollary = thmbox("2", "Corollary", base: "1", inset: 0pt)
+#let u-corollary = corollary.with(numbering: none)
+#let lemma = thmbox("1", "Lemma", base_level: 0, inset: 0pt)
+#let u-lemma = lemma.with(numbering: none)
+#let proposition = thmbox("1", "Proposition", base_level: 0, inset: 0pt)
+#let u-proposition = proposition.with(numbering: none)
+#let conjecture = thmbox("1", "Conjecture", base_level: 0, inset: 0pt)
+#let u-conjecture = conjecture.with(numbering: none)
+#let definition = thmbox("1", "Definition", base_level: 0, inset: 0pt)
+#let u-definition = definition.with(numbering: none)
+#let example = thmbox("1", "Example", base_level: 0, inset: 0pt)
+#let u-example = example.with(numbering: none)
+#let problem = thmbox("1", "Problem", base_level: 0, inset: 0pt)
+#let u-problem = problem.with(numbering: none)
+#let exercise = thmbox("1", "Exercise", base_level: 0, inset: 0pt)
+#let u-exercise = exercise.with(numbering: none)
+#let solution = thmbox("1", "Solution", base_level: 0, inset: 0pt)
+#let u-solution = solution.with(numbering: none)
+#let remark = thmbox("1", "Remark", base_level: 0, inset: 0pt)
+#let u-remark = remark.with(numbering: none)
+#let claim = thmbox("1", "Claim", base_level: 0, inset: 0pt)
+#let u-claim = claim.with(numbering: none)
+#let fact = thmbox("1", "Fact", base_level: 0, inset: 0pt)
+#let u-fact = fact.with(numbering: none)
+#let case = thmbox("1", "Case", base_level: 0, inset: 0pt)
+#let proof = thmproof("proof", "Proof", base_level: 0, inset: 0pt)
+
+#show: thmrules
+""".strip()
+    + "\n"
+)
 
 FUNCTIONS_BASE = [
     (
@@ -747,33 +1171,37 @@ PREAMBLE_FANCY = """
 """.strip()
 
 TEMPLATES = [
-    TemplateInfo(PREAMBLE_BASIC, [], "hebrew-basic.tyx"),
-    TemplateInfo(PREAMBLE_FANCY, [], "hebrew-fancy.tyx"),
     TemplateInfo(
-        "",
-        [],
+        "hebrew-basic.tyx", preamble=PREAMBLE_HEBREW_BASE + PREAMBLE_BASIC, functions=[]
+    ),
+    TemplateInfo(
+        "hebrew-fancy.tyx", preamble=PREAMBLE_HEBREW_BASE + PREAMBLE_FANCY, functions=[]
+    ),
+    TemplateInfo(
         "hebrew-empty.tyx",
-        Content(
-            root={
-                "children": [
-                    {
-                        "children": [],
-                        "direction": "rtl",
-                        "format": "",
-                        "indent": 0,
-                        "type": "paragraph",
-                        "version": 1,
-                        "textFormat": 0,
-                        "textStyle": "",
-                    }
-                ],
-                "direction": "rtl",
-                "format": "",
-                "indent": 0,
-                "type": "root",
-                "version": 1,
-            }
-        ),
+        functions=[],
+        preamble=PREAMBLE_HEBREW_BASE,
+        content=CONTENT_EMPTY,
+    ),
+    TemplateInfo(
+        "english-basic.tyx",
+        preamble=PREAMBLE_ENGLISH_BASE + PREAMBLE_BASIC,
+        functions=[],
+        settings=TyXDocumentSettings(),
+        content=CONTENT_ENGLISH,
+    ),
+    TemplateInfo(
+        "english-fancy.tyx",
+        preamble=PREAMBLE_ENGLISH_BASE + PREAMBLE_FANCY,
+        functions=[],
+        settings=TyXDocumentSettings(),
+        content=CONTENT_ENGLISH,
+    ),
+    TemplateInfo(
+        "english-empty.tyx",
+        functions=[],
+        preamble=PREAMBLE_ENGLISH_BASE,
+        content=CONTENT_EMPTY,
     ),
 ]
 
@@ -782,13 +1210,17 @@ def write_templates():
     templates_directory = Path("templates")
 
     for template in TEMPLATES:
-        result = DOCUMENT_BASE.model_copy(deep=True)
-        result.preamble = PREAMBLE_BASE + "\n" + template.preamble
+        result = TyXDocument(
+            version="0.2.12",
+            content=template.content or CONTENT_HEBREW,
+            settings=template.settings or SETTINGS_HEBREW,
+            preamble=template.preamble,
+        )
+        result.field_schema = "https://tyx-editor.com/schemas/tyx-document.schema.json"
+
         result.settings.functions = {
             name: f for (name, f) in FUNCTIONS_BASE + template.functions
         }
-        if template.content is not None:
-            result.content = template.content
 
         (templates_directory / (template.filename)).write_text(
             result.model_dump_json(indent=2, exclude_none=True)
@@ -936,9 +1368,6 @@ def write_settings():
         language="he",
         keyboardMap="Hebrew",
         keyboardShortcuts=shortcuts,
-        **{
-            "$schema": "https://tyx-editor.com/schemas/tyx-settings.schema.json",
-        },
     )
 
     Path("settings.json").write_text(
