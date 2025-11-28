@@ -263,87 +263,87 @@
     ],
     [
       "alt+e v",
-      "insertFunctionCall proof"
+      "setFunctionCall proof"
     ],
     [
       "alt+e l",
-      "insertFunctionCall lemma"
+      "setFunctionCall lemma"
     ],
     [
       "alt+e shift+l",
-      "insertFunctionCall u-lemma"
+      "setFunctionCall u-lemma"
     ],
     [
       "alt+e c",
-      "insertFunctionCall claim"
+      "setFunctionCall claim"
     ],
     [
       "alt+e shift+c",
-      "insertFunctionCall u-claim"
+      "setFunctionCall u-claim"
     ],
     [
       "alt+e d",
-      "insertFunctionCall definition"
+      "setFunctionCall definition"
     ],
     [
       "alt+e shift+d",
-      "insertFunctionCall u-definition"
+      "setFunctionCall u-definition"
     ],
     [
       "alt+e x",
-      "insertFunctionCall corollary"
+      "setFunctionCall corollary"
     ],
     [
       "alt+e shift+x",
-      "insertFunctionCall u-corollary"
+      "setFunctionCall u-corollary"
     ],
     [
       "alt+e k",
-      "insertFunctionCall lemma"
+      "setFunctionCall lemma"
     ],
     [
       "alt+e shift+k",
-      "insertFunctionCall u-lemma"
+      "setFunctionCall u-lemma"
     ],
     [
       "alt+e t",
-      "insertFunctionCall theorem"
+      "setFunctionCall theorem"
     ],
     [
       "alt+e shift+t",
-      "insertFunctionCall u-theorem"
+      "setFunctionCall u-theorem"
     ],
     [
       "alt+e ,",
-      "insertFunctionCall exercise"
+      "setFunctionCall exercise"
     ],
     [
       "alt+e shift+,",
-      "insertFunctionCall u-exercise"
+      "setFunctionCall u-exercise"
     ],
     [
       "alt+e p",
-      "insertFunctionCall solution"
+      "setFunctionCall solution"
     ],
     [
       "alt+e shift+p",
-      "insertFunctionCall u-solution"
+      "setFunctionCall u-solution"
     ],
     [
       "alt+e e",
-      "insertFunctionCall example"
+      "setFunctionCall example"
     ],
     [
       "alt+e shift+e",
-      "insertFunctionCall u-example"
+      "setFunctionCall u-example"
     ],
     [
       "alt+e g",
-      "insertFunctionCall remark"
+      "setFunctionCall remark"
     ],
     [
       "alt+e shift+g",
-      "insertFunctionCall u-remark"
+      "setFunctionCall u-remark"
     ],
     [
       "alt+i i",

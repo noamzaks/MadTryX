@@ -1,8 +1,11 @@
 import os
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+import appdirs
+import typer
 from tyx_schema import (
     Content,
     FunctionDefinition,
@@ -1223,7 +1226,7 @@ def write_templates():
         }
 
         (templates_directory / (template.filename)).write_text(
-            result.model_dump_json(indent=2, exclude_none=True)
+            result.model_dump_json(indent=2, exclude_none=True), encoding="utf-8"
         )
 
 
@@ -1328,11 +1331,11 @@ def write_settings():
         ("e", "example"),
         ("g", "remark"),
     ]:
-        shortcuts.append([f"alt+e {shortcut}", f"insertFunctionCall {environment}"])
+        shortcuts.append([f"alt+e {shortcut}", f"setFunctionCall {environment}"])
 
         if environment != "proof":
             shortcuts.append(
-                [f"alt+e shift+{shortcut}", f"insertFunctionCall u-{environment}"]
+                [f"alt+e shift+{shortcut}", f"setFunctionCall u-{environment}"]
             )
 
     # Set Theory
@@ -1371,11 +1374,28 @@ def write_settings():
     )
 
     Path("settings.json").write_text(
-        settings.model_dump_json(indent=2, exclude_none=True)
+        settings.model_dump_json(indent=2, exclude_none=True), encoding="utf-8"
     )
+
+
+def main(deploy: bool = False):
+    write_templates()
+    write_settings()
+
+    if deploy:
+        tyx_config_path = Path(
+            appdirs.user_config_dir("com.tyx-editor.tyx", False, roaming=True)
+        )
+        for d in ("fonts", "templates"):
+            if os.path.exists(tyx_config_path / d):
+                shutil.rmtree(tyx_config_path / d)
+            shutil.copytree(d, tyx_config_path / d)
+        for f in ("settings.json",):
+            if os.path.exists(tyx_config_path / f):
+                os.remove(tyx_config_path / f)
+            shutil.copyfile(f, tyx_config_path / f)
 
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__))
-    write_templates()
-    write_settings()
+    typer.run(main)
